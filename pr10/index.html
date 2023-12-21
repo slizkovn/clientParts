@@ -1,0 +1,121 @@
+<html>
+<head>
+  <title>p10</title>
+</head>
+<body>
+  <form id="captchaForm">
+    <div id="captchaContainer"></div>
+    <input type="text" id="captchaInput">
+    <button type="submit" id="submitButton" disabled>Submit</button>
+  </form>
+
+  <script>
+    function generateRandomString(length) {
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      var charactersLength = characters.length;
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+    }
+
+    function generateRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generateCaptcha(captchaType) {
+      var captchaContainer = document.getElementById('captchaContainer');
+
+      if (captchaType == 0) {
+        var randomString = generateRandomString(5);
+        captchaContainer.textContent = "Введите следующие символы: " + randomString;
+        return randomString;
+      } else {
+        var num1 = generateRandomNumber(1, 10);
+        var num2 = generateRandomNumber(1, 10);
+        captchaContainer.textContent = "Введите результат: " + num1 + " + " + num2;
+        return num1 + num2;
+      }
+    }
+
+    function isEmpty(obj) {
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    var captchaForm = document.getElementById('captchaForm');
+    var captchaInput = document.getElementById('captchaInput');
+    var submitButton = document.getElementById('submitButton');
+
+    let captchaValue = generateCaptcha(0);
+
+    captchaForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      if (captchaInput.value === captchaValue.toString() && !isEmpty(captchaInput.value)) {
+        alert('Форма отправлена.');
+      } else {
+        alert('Офибка в капче. Давайте попоробуем по-другому...');
+        captchaValue = generateCaptcha(1);
+        submitButton.disabled = true;
+      }
+      captchaInput.value = '';
+    });
+
+    captchaInput.addEventListener('input', function() {
+      if (captchaInput.value !== '' && !isEmpty(captchaInput.value)) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    });
+  </script>
+
+
+  <hr>
+  <button onclick="accumulator.read()">Добавить число</button>
+  <p id="output"></p>
+
+  <script>
+    var accumulator = new Accumulator(100); 
+
+    function Accumulator(startingValue) {
+      this.value = startingValue;
+
+      this.read = function() {
+        var userInput = prompt('Введите число', '');
+        this.value += +userInput;
+        document.getElementById('output').textContent = "Текущее значение: " + accumulator.value;
+      };
+    }
+
+    document.getElementById('output').textContent = "Текущее значение: " + accumulator.value;
+  </script>
+
+
+  <hr>
+  <input type="text" id="inputText" placeholder="Enter text...">
+  <input type="number" id="inputLength" placeholder="Enter max length...">
+  <button onclick="truncateText()">Truncate</button>
+  <p id="truncatedText"></p>
+  <script>
+    function truncate(str, maxlength) {
+      if (str.length > maxlength) {
+        return str.slice(0, maxlength) + '…';
+      }
+      return str;
+    }
+
+    function truncateText() {
+      let text = document.getElementById('inputText').value;
+      let maxLength = document.getElementById('inputLength').value;
+      let truncated = truncate(text, maxLength);
+      document.getElementById('truncatedText').innerText = truncated;
+    }
+  </script>
+</body>
+</html>

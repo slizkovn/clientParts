@@ -1,0 +1,63 @@
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('Nunito/Nunito-VariableFont_wght.ttf');
+    size: 20px;
+}
+
+
+aside { 
+	float:right; width: 20%;
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	height: 100%;
+	margin: 10px;
+}
+
+.name_logo {
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+aside { 
+	float:right; width: 20%;
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	height: 100%;
+	margin: 10px;
+}
+
+.name_logo {
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.m_weather_forecast { /* Комбинированный селектор: выбор элемента по классу и тегу. */
+	column-count: 4;
+}
+
+#forecast dl dd { /* Потомственный селектор: выбор элемента, являющегося потомком другого элемента. */
+  margin-left: 30px;
+}
+
+a[href="#contacts"] { /* Селектор атрибута: выбор элементов, у которых есть определенный атрибут или значение атрибута. */
+  color: red;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+nav ul li a:active {
+  background-color: gray;
+}
+
+nav ul li a:visited {
+  color: purple;
+}

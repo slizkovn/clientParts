@@ -1,0 +1,107 @@
+header{
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+}
+
+body{
+    background-color: #E8DA83;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1{
+    font-size: 80px;
+}
+
+nav ul{
+    text-align: center;
+}
+
+nav li{
+    display: inline;
+}
+
+nav a {
+    font-size: 40px;
+    color: black;
+    margin: 10px;
+}
+
+#menu-button{
+    display: none;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+
+
+
+@media screen and (orientation: portrait){
+    #menu-button{
+        display: flex;
+        top: 50px;
+        background-color: rgb(85, 85, 85);
+        width: 80px;
+        height: 8px;
+        justify-content: center;
+        position: absolute;
+        cursor: pointer;
+    }
+    #menu-button::before,
+    #menu-button::after{
+        content: '';
+        background-color:rgb(85, 85, 85);
+        width: 80px;
+        height: 8px;
+        border-radius: 5px;
+        display: block;
+        position: absolute;
+    }
+    #menu-button::after{
+        top:20px;
+    }
+    #menu-button::before{
+        top:-20px;
+    }
+    #menu{
+        display: none;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 0px;
+        left: 10%;
+    }
+
+    #menu-toggle:checked + #menu{
+        display: flex;
+        background-color: white;
+        margin: center;
+    }
+
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px;
+    align-items: center;
+}
+
+.gallery-item{
+    width: 400px;
+    align-items: center;
+}
+
+.gallery-item img{
+    max-width: 100%;
+}
+
+@media screen and (orientation: portrait) {
+    .gallery-item{
+        flex-basis: auto;
+    }
+}

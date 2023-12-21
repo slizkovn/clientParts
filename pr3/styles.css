@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('Nunito/Nunito-VariableFont_wght.ttf');
+}
+
+.name_logo {
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.m_weather_forecast {
+	column-count: 4;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+.main_div{
+	margin: 10px;
+	width: 75%;
+}
+
+.name_logo {
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	margin: 10px;
+	display: flex; 
+    position: relative;
+}
+
+
+.m_weather_forecast { /* Комбинированный селектор: выбор элемента по классу и тегу. */
+	column-count: 4;
+}
+
+.m_weather_forecast li {
+  font-weight: bold; 
+  margin-top: 10px; 
+}
+
+#forecast dl dd { /* Потомственный селектор: выбор элемента, являющегося потомком другого элемента. */
+  margin-left: 30px;
+}
+
+#clothes {
+  margin-left: 30px;
+}
+
+a[href="#contacts"] { /* Селектор атрибута: выбор элементов, у которых есть определенный атрибут или значение атрибута. */
+  color: red;
+  position: sticky;
+}
+
+aside { 
+	width: 20%;
+	background-color:#A5E2FF;
+	border-radius: 10px;
+	margin: 10px;
+	position: fixed;
+	right: 10px;
+	top: 20px;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+nav ul li a:active {
+  background-color: gray;
+}
+
+nav ul li a:visited {
+  color: purple;
+}
+
+.main-nav {
+	border-radius: 10px;
+	padding: 10px;
+ 	background-color: white;
+}
+
+.main-nav ul {
+  list-style: square outside;
+  padding: 2px;
+}
+
+.main-nav li {
+  margin-left: 10px;
+}
+
+.main-nav li a{
+	text-decoration: none;
+}
+
+footer{
+	margin-left: 50px;
+	position: relative;
+}
+
+.to_top{
+	position: absolute;
+}

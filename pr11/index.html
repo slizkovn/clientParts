@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <h1>Shopping Cart</h1>
+
+  <div id="cart">
+    <h2>Cart Items</h2>
+    <ul id="cart-items"></ul>
+    <p id="total-cost" >Total</p>
+    <button id="append-button">Append</button>
+    <button id="clear-button">Clear Cart</button>
+  </div>
+
+  <div id="filter">
+    <h2>Filtered Items</h2>
+    <input type="number" id="min-value" placeholder="Min Value">
+    <input type="number" id="max-value" placeholder="Max Value">
+    <button id="filter-button">Filter</button>
+    <ul id="filtered-items"></ul>
+  </div>
+
+  <div id="sort">
+    <h2>Sorted Items</h2>
+    <button id="asc-button">Sort Ascending</button>
+    <button id="desc-button">Sort Descending</button>
+    <ul id="sorted-items"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

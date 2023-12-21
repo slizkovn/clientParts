@@ -1,0 +1,489 @@
+:root {
+    --glass-background: rgba(255, 255, 255, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --gradient-background: linear-gradient(45deg, rgba(255, 255, 255, 0.7), rgba(0, 120, 120, 0.7));
+    --big-square-size: 70px;
+    --small-square-size: 30px;
+    --animation-duration: 5s;
+}
+
+body {
+    background-color: rgba(30, 30, 30, 1); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.container0{
+    width: 80%;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    position: relative;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--glass-shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background: var(--glass-background);
+    margin-right: 30px;
+    z-index: 1;
+    transition: transform 0.8s; 
+}
+
+.card::after{
+    content: "";
+    position: absolute;
+    top:-80%;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: var(--glass-shadow);
+    width: 0;
+    height: 38%;
+    background: var(--glass-background);
+    transform: translateX(20%);
+    animation: move 10s linear infinite;
+    z-index: -1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%; /* Поднимаем элемент выше карточки */
+    width: 80%;
+    left: 10%;
+    height: 200%; /* Увеличиваем высоту элемента */
+    background: var(--gradient-background);
+    border-radius: 10px; /* Закругленные края */
+    filter: blur(5px);
+    z-index: -1;
+    transition: transform 0.8s; 
+}
+.card:hover::after{
+    width: 10%;
+    border: 1px solid var(--glass-border);
+    left: 50%;
+}
+.card:hover::before{
+    transform: scale(1, 1.3);
+}
+.card:hover{
+    transform: scale(1.1, 1.1);
+}
+
+@keyframes move {
+    0%{
+        left: 0;
+        top: 0;
+    }
+    25%{
+        left: 50%;
+        top: 100%;
+    }
+    50%{
+        left: 80%;
+        top: 50%;
+    }
+    75%{
+        left: 50%;
+        top: -20%;
+    }
+    100%{
+        left: 0;
+        top: 0;
+    }
+}
+
+
+.container-form {
+    position: absolute;
+    top: 55%;
+    width: 20%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form input {
+    border-radius: 10px;
+    margin-bottom: 10%;
+    height: 20px;
+}
+
+.form button {
+    border-radius: 10px;
+    height: 25px;
+    position: absolute;
+    right: 5%;
+}
+
+.smallSquare {
+    position: absolute;
+    width: var(--small-square-size);
+    height: var(--small-square-size);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: move2 var(--animation-duration) infinite linear;
+}
+
+.bigSquare {
+    position: absolute;
+    width: var(--big-square-size);
+    height: var(--big-square-size);
+    top: 0px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    animation: move1 calc(var(--animation-duration)*2) infinite linear;
+}
+
+.bigSquare:nth-child(1) {
+    top: -100px;
+    left: calc(4% + (var(--big-square-size) / 2));
+}
+
+.smallSquare:nth-child(2) {
+    top: calc(20px+ (var(--small-square-size) / 2));
+    left: 30%;
+    
+}
+
+.smallSquare:nth-child(3) {
+    top: calc(20% - (var(--small-square-size) / 2));
+    left: calc(70% - (var(--small-square-size) / 2));
+}
+
+.smallSquare:nth-child(4) {
+    top: 150px;
+    left: 150px + calc(4% + (var(--big-square-size) / 2));
+    
+}
+
+@keyframes move1 {
+    0% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(200%, 50%);
+    }
+    40% {
+        transform: translate(80%, 60%);
+    }
+    60% {
+        transform: translate(20%, 0);
+    }
+    80% {
+        transform: translate(-10%, 30%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(150%, 40%);
+    }
+    50% {
+        transform: translate(20%, -10%);
+    }
+    75% {
+        transform: translate(-10%, 30%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.container-blur {
+    position: absolute;
+    top: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+.card-blur {
+    width: 300px;
+    height: 300px;
+    transition: filter 0.3s;
+    border-radius: 10px;
+
+}
+
+.card-blur img {
+    width: 100%;
+    height: auto;
+}
+
+.card-blur p {
+    top: 50%;
+    text-align: center;
+    position: absolute;
+    font-size: 28px;
+    color: white;
+}
+
+
+.container-blur:hover .card-blur:not(:hover){
+    filter: blur(5px);
+    transition: filter 0.8s ease;
+}
+
+.container-blur:hover .card-blur:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+
+.container2 {
+    position: absolute;
+    top: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.card2 {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.card2 img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5; 
+    transition: opacity 0.3s; 
+}
+
+.card2:hover img {
+    opacity: 1;
+}
+
+.card2 p{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: absolute;
+    font-size: 28px;
+    color: white;
+    opacity: 0.5;
+}
+
+.card2:hover p{
+    opacity: 1;
+}
+
+.card2::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 5%;
+    background-color: rgba(255, 0, 180, 0.6);
+    opacity: 0;
+    animation: movetop 5s linear infinite;
+}
+
+.card2:hover::before {
+    opacity: 1;
+}
+
+@keyframes movetop {
+    0%{
+        width: 5%;
+        height: 5%;
+        left: 0;
+        top: 0;
+    }
+    5% {
+        left:0;
+        width: 75%;
+    }
+    10%{
+        left: 95%;
+        top: 0;
+        height: 5%;
+        width: 25%;
+    }
+
+    15%{
+        width: 5%;
+        height: 5%;
+        left: 95%;
+        top: 0;
+    }
+
+    20%{
+        top: 0;
+        left: 95%;
+        height: 75%;
+    }
+    25%{
+        left: 95%;
+        top: 95%;
+        height: 25%;
+        width: 5%;
+    }
+
+    30%{
+        width: 5%;
+        height: 5%;
+        left: 95%;
+        top: 95%;
+    }
+
+
+    35%{
+        width: 75%;
+        height: 5%;
+        right: 0%;
+        top: 95%;
+    }
+    40%{
+        width: 25%;
+        height: 5%;
+        right: 95%;
+        top: 95%;
+    }
+    45%{
+        width: 5%;
+        height: 5%;
+        left: 0%;
+        bottom: 0%;
+    }
+
+    50%{
+        width: 5%;
+        height: 75%;
+        left: 0%;
+        top: 95%;
+    }
+    55%{
+        width: 5%;
+        height: 25%;
+        left: 0%;
+        top: 0%;
+    }
+    60%{
+        width: 5%;
+        height: 5%;
+        left: 0%;
+        top: 0%;
+    }
+}
+
+.social-buttons {
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.sub-button {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.sub-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-position: top;
+    transition: opacity 2s, transform 2s;
+}
+
+.sub-button:hover {
+  background-color: transparent;
+  background-size: cover;
+  background-position: bottom;
+  transform: scale(1.2);
+}
+
+.youtube:hover {
+    background-image: linear-gradient(to bottom, red, transparent);
+}
+
+.instagram:hover {
+    background-image: linear-gradient(to bottom, violet, transparent);
+}
+
+.twitter:hover {
+    background-image: linear-gradient(to bottom, skyblue, transparent);
+}
+
+.button{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+
+.button img{
+    width: 70%;
+    left: 15%;
+    height: 70%;
+    top: 15%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.social-button:hover::before {
+    opacity: 1;
+}

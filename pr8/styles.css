@@ -1,0 +1,289 @@
+body {
+  background-color: #21b5b5;
+  font-family: cursive;
+}
+
+header {
+  background-color: #4f4f59;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding: 0;
+  background-color: #4f4f59;
+}
+
+nav li {
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #e05e12;
+}
+
+.main {
+  padding: 20px;
+  display: grid;
+  grid-gap: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.grid-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.grid-item:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.grid-item:nth-child(2) {
+  grid-row: 1 / 3;
+  grid-row-start: 1;
+  grid-column-start: 3;
+}
+
+.grid-item:nth-child(3) {
+  grid-row-start: 1;
+  grid-column-start: 4;
+}
+
+.grid-item:nth-child(4) {
+  grid-row-start: 2;
+  grid-column-start: 4;
+}
+
+.grid-item:nth-child(5) {
+  grid-row: 2 / 4;
+  grid-row-start: 2;
+  grid-column-start: 1;
+}
+
+.grid-item:nth-child(6) {
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+
+.grid-item:nth-child(7) {
+  grid-column: 2 / 5;
+  grid-row-start: 3;
+  grid-column-start: 2;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+  transition: 1s;
+  background-color: #e05e12;
+}
+
+.contact-form {
+  display: grid;
+  grid-gap: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-top: 20px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.form-row:nth-child(5) {
+  grid-column: 1 / 3;
+}
+
+.form-row:nth-child(6) {
+  grid-column: 1 / 3;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.input-container label {
+  flex: 1;
+  margin-right: 10px;
+  text-align: right;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.input-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+button {
+  background-color: #e05e12;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f7803b;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.footer-links {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e05e12;
+}
+
+
+.social-buttons {
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.sub-button {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.sub-button:hover {
+  background-color: transparent;
+  background-size: cover;
+  transform: scale(1.2);
+}
+
+.youtube:hover {
+    background-image: linear-gradient(to bottom, red, transparent);
+}
+
+.instagram:hover {
+    background-image: linear-gradient(to bottom, violet, transparent);
+}
+
+.twitter:hover {
+    background-image: linear-gradient(to bottom, skyblue, transparent);
+}
+
+.button{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+
+.button img{
+    width: 70%;
+    left: 15%;
+    height: 70%;
+    top: 15%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.social-button:hover::before {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px){
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-column: 1 / 2;
+  }
+
+  .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+
+  .footer-links {
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .footer-social {
+      margin-top: 20px;
+  }
+}

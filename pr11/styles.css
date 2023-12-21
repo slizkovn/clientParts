@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#cart,
+#filter,
+#sort {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+#min-value,
+#max-value {
+  margin-right: 10px;
+}

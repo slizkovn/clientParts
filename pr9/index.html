@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>9pr</title>
+</head>
+<body>
+ <script>
+    var registration = prompt("Желаете пройти регистрацию на сайте? (Да/Нет)");
+
+    if (registration.toLowerCase() === "да") {
+     alert("Круто!");
+    } else {
+     alert("Попробуй ещё раз");
+    }
+
+    let login = prompt("Введите логин:");
+
+    if (login === "Админ") {
+      let password = prompt("Введите пароль:");
+      if (password === "Я главный") {
+        alert("Здравствуйте!");
+      } else if (password === null || password === "") {
+        alert("Отменено");
+      } else {
+        alert("Неверный пароль");
+      }
+    } else if (login === null || login === "") {
+      alert("Отменено");
+    } else {
+      alert("Я вас не знаю");
+    }
+ </script>
+
+
+ <body>
+ <img id="likeBtn" src="https://bogatyr.club/uploads/posts/2023-03/1678899895_bogatyr-club-p-serdtse-na-pustom-fone-foni-instagram-20.png" style="width: 50px; border: 5px; border-radius: 15px;"></button>
+ <p style="position: absolute; top:5px; left:30px;color: pink; cursor: default;;"><span id="likeCount">1</span></p>
+
+ <script>
+  let likeBtn = document.getElementById("likeBtn");
+  let likeCount = document.getElementById("likeCount");
+  let isLiked = false;
+
+  likeBtn.addEventListener("click", function() {
+   if (!isLiked) {
+    likeBtn.style.backgroundColor = "pink";
+    likeCount.innerHTML++;
+    isLiked = true;
+   } else {
+    likeBtn.style.backgroundColor = "";
+    likeCount.innerHTML--;
+    isLiked = false;
+   }
+  });
+ </script>
+
+<hr>
+<button id="drawBtn" style="background-color:red; border-radius: 10px; color: white;">Рисовать</button>
+<hr>
+<canvas id="canvas" style="background-color: grey; width: 50%; height: 50%; border: 5px;">lol</canvas>
+
+<script>
+
+var isDrawing = false;
+
+drawBtn.addEventListener("click", function() {
+    isDrawing = (isDrawing+1)%2;
+    if (isDrawing) drawBtn.style.backgroundColor = "green"; else drawBtn.style.backgroundColor = "red";
+});
+
+canvas.addEventListener("mousemove", function(e) {
+  let canvas = document.getElementById("canvas");
+  let ctx = canvas.getContext("2d");
+
+    
+  if (isDrawing) {
+        ctx.arc(e.clientX-200, e.clientY-200, 1, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+  }
+});
+</script>
+
+</body>
+</html>

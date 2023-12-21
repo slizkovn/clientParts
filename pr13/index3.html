@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Effect</title>
+  <style>
+    body {
+      height: 2000px;
+      margin: 0;
+      padding: 0;
+    }
+    .parallax-container {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .parallax-bg {
+      background-image: url('https://w.forfun.com/fetch/c4/c493aac67877288476b0fc52d55f55cf.jpeg');
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      transform: translate3d(0, 0, 0);
+    }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-container">
+    <div class="parallax-bg"></div>
+    <div class="content">
+      <h1>Типа практика по клиентским</h1>
+      <p>Крути вниз</p>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      var parallaxBg = document.querySelector('.parallax-bg');
+
+      window.onscroll = function() {
+        var yOffset = window.pageYOffset;
+        parallaxBg.style.transform = 'translate3d(0, ' + yOffset * 0.5 + 'px, 0)';
+      };
+    };
+  </script>
+</body>
+</html>

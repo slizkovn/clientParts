@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset=utf-8>
+ <title>Погода на месяц</title>
+ <link rel="icon" type="image/x-icon" href="w.ico">
+</head>
+<body>
+  <link rel="stylesheet" href="styles.css">
+ <header>
+  <div class="name_logo"><img src="https://icon-library.com/images/img_498862_13657.png" alt="Логотип" width="100" style="height: 100%">
+    <h1 id="top">Погода на месяц</h1></div>
+  </header>
+  <hr>
+  <aside>
+  <div style="margin: 10px">
+  <h2>Содержание</h2>
+  <nav class="main-nav">
+   <ul>
+    <li><a href="#forecast">Прогноз погоды</a></li>
+    <li><a href="#clothes">Выбор одежды</a></li>
+    <li><a href="#order">Заказать прогноз</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+   </ul>
+  </nav>
+  </div>
+  </aside>
+ 
+ 
+ <main>
+  <div class="main_div">
+  <section id="forecast">
+   <h2>Прогноз погоды на месяц</h2>
+   <p>Прогноз погоды на ближайший месяц.</p>
+    <ol type="1" start="1" class="m_weather_forecast">
+    <li>Первая неделя</li>
+    <ul>
+        <li>Понедельник: 0&deg;C</li>
+        <li>Вторник -3&deg;C</li>
+        <li>Среда -5&deg;C</li>
+        <li>Четверг -2&deg;C</li>
+        <li>Пятница 1&deg;C</li>
+        <li>Суббота 2&deg;C</li>
+        <li>Воскресенье 0&deg;C</li>
+    </ul>
+    <li>Вторая неделя</li>
+    <ul>
+        <li>Понедельник -6&deg;C</li>
+        <li>Вторник -8&deg;C</li>
+        <li>Среда -10&deg;C</li>
+        <li>Четверг -7&deg;C</li>
+        <li>Пятница -4&deg;C</li>
+        <li>Суббота -3&deg;C</li>
+        <li>Воскресенье -5&deg;C</li>
+    </ul>
+    <li>Третья неделя</li>
+    <ul>
+        <li>Понедельник: 3&deg;C</li>
+        <li>Вторник 1&deg;C</li>
+        <li>Среда -2&deg;C</li>
+        <li>Четверг -1&deg;C</li>
+        <li>Пятница 0&deg;C</li>
+        <li>Суббота 2&deg;C</li>
+        <li>Воскресенье 1&deg;C</li>
+    </ul>
+    <li>Четвертая неделя</li>
+    <ul>
+        <li>Понедельник -1&deg;C</li>
+        <li>Вторник 2&deg;C</li>
+        <li>Среда 0&deg;C</li>
+        <li>Четверг -3&deg;C</li>
+        <li>Пятница -1&deg;C</li>
+        <li>Суббота 3&deg;C</li>
+        <li>Воскресенье 2&deg;C</li>
+    </ul>
+    </ol>
+
+   <hr>
+   <section id="clothes">
+     <h2>Как правильно одеваться в такую погоду?</h2>
+     <p>Советы по одежде для разных погодных условий:</p>
+     <dl>
+      <dt><b>Дождь</b></dt>
+      <dd><img src="https://avatars.mds.yandex.net/i?id=4611bd122a80c587a23fe73fa36c0ddb_sr-7097242-images-thumbs&n=13" alt="Дождь" width="100" height="100">
+        <br>Наденьте куртку или плащ, обувь на резиновой подошве.</dd>
+      <dt><b>Снег</b></dt>
+      <dd><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple117/v4/8a/69/2b/8a692bfa-da5f-4755-f181-d0e3febc05f5/mzl.jzuvbsss.png/100x100bb-85.jpg" alt="Снег" width="100" height="100">
+        <br>Наденьте теплую куртку, шапку и варежки.</dd>
+      <dt><b>Сильный ветер</b></dt>
+      <dd><img src="https://img.icons8.com/?size=2x&id=31842&format=png" alt="Ветер" width="100" height="100">
+        <br>Наденьте куртку с капюшоном и шарф.</dd>
+      <dt><b>Солнечно</b></dt>
+      <dd><img src="https://avatars.mds.yandex.net/i?id=bb0a862c7feb238b7b1cf596fba73351_sr-8240946-images-thumbs&n=13" alt="Солнечно" width="100" height="100">
+        <br>Наденьте легкую одежду и шляпу.</dd>
+      <dt><b>Гроза</b></dt>
+      <dd><img src="https://avatars.mds.yandex.net/i?id=2a00000179eb87964dd3ed5d8f4c5458343f-4518983-images-thumbs&n=13" alt="Гроза" width="100" height="100">
+        <br>Не выходите на улицу.</dd>
+     </dl>
+
+     <p>Видео на эту тему:</p>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/O_OWhdsYGIM?si=f-l6eGjO_0FwZco5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+  <hr>
+  <section id="order">
+    <h2>Заказать точный прогноз погоды по определенной области</h2>
+    <form id="order" method="post">
+      <label for="name">ФИО:</label>
+      <input type="text" name="name" id="name" required><br>
+      
+      <label for="phone">Телефон: +7 </label>
+      <input type="tel" name="phone" id="phone" pattern="([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="(***) ***-**-**"><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="email" required><br>
+      
+      <label for="file">Фотография области:</label>
+      <input type="file" name="file" id="file"><br>
+      
+      <label for="checkbox">Перезвонить? </label>
+      <input type="checkbox" name="callback" id="checkbox" checked><br>
+      
+      <label for="radio1">Нужна консультация:</label>
+      <input type="radio" name="radio" id="radio1" value="radio1"><br>
+      
+      <label for="radio2">Нужен прогноз погоды:</label>
+      <input type="radio" name="radio" id="radio2" value="radio2"><br>
+
+      <label for="date">Предполагаемая дата:</label>
+      <input type="datetime-local" name="meetingtime" required><br>
+
+      <label for="text">Опишите кратко то что вам необходимо:</label><br>
+      <textarea id="story" name="story" rows="5" cols="50" maxlength="50">Мне нужно...</textarea>
+
+      <fieldset>
+        <legend>Область:</legend>
+
+        <input type="radio" id="msk" value="msk" />
+        <label for="msk">Москва</label><br />
+
+        <input type="radio" id="msko"  value="msko" />
+        <label for="msko">Московская область</label><br />
+
+        <input type="radio" id="spb" value="spb" />
+        <label for="spb">Санкт-Петербург</label>
+      </fieldset>
+
+      <div class="submit_button"><input type="submit" value="Отправить"></div>
+    </form>
+  </section>
+  <hr>
+   <hr>
+  <section id="contacts">
+   <h2>Контакты</h2>
+   <p>Если у вас есть вопросы или предложения, свяжитесь с нами:</p>
+   <ul>
+    <li><a href="tel:+79009009090">+7 (900) 900-90-90</a></li>
+    <li><a href="mailto:info@weather.com">info@weather.com</a></li>
+   </ul>
+
+   <p>Мы на карте:</p>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.982057227468!2d37.38976269054062!3d55.75252925007922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bcd39dd81d7%3A0xe3e68128acfc223d!2z0KTQtdC00LXRgNCw0LvRjNC90LDRjyDRgdC70YPQttCx0LAg0KDQvtGB0YHQuNC4INC_0L4g0LPQuNC00YDQvtC80LXRgtC10L7RgNC-0LvQvtCz0LjQuCDQuCDQvNC-0L3QuNGC0L7RgNC40L3Qs9GDINC-0LrRgNGD0LbQsNGO0YnQtdC5INGB0YDQtdC00Ys!5e0!3m2!1sru!2sru!4v1695823581849!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+   <br>
+   <img src="https://www.w3schools.com/html/workplace.jpg" alt="Контакты" width="400" height="333" usemap="#contactmap">
+   <map name="contactmap">
+    <area shape="circle" coords="250,150,50" href="https://www.google.com/">
+    <area shape="rect" coords="100,200,300,300" href="https://www.yahoo.com/">
+    <area shape="poly" coords="400,200,450,250,500,200,550,250,600,200,650,250,700,200,700,300,400,300" href="https://www.bing.com/">
+   </map>
+  </section>
+</div>
+</main>
+
+ <footer>
+  <address>
+  <p>&copy; 2023 Погода на месяц</p>
+  <address>Разработчик: Слизков Никита, email: nikslizkov@gmail.com</address>
+  </address>
+ </footer>
+ <br>
+ <div class="to_top"><p><a href="#top">Наверх</a></p></div>
+</body>
+</html>

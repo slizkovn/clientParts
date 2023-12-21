@@ -1,0 +1,76 @@
+.notification {
+  position: absolute;
+  background-color: #008CBA;
+  color: black;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.notification-list {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  background-color: #FFF8CC;
+  border: 1px solid grey;
+  padding: 10px;
+  display: none;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+.notification:hover .notification-list {
+  display: block;
+  animation-name: fadeInFromNone;
+  animation-duration: 1s; 
+}
+
+
+
+.notification-list li {
+  padding: 5px;
+  transition: transform 0.9s;
+  border-radius: 10px;
+  
+}
+
+.notification-list li:hover {
+  background-color: #FEE75A;
+  transform: scale(1.3);
+}
+
+.notification p{
+  position: absolute;
+  top: -3px;
+  left: 25px;
+  color: red;
+}
+
+.notification:hover p{
+  display: none;
+}
+
+
+.list{
+  position: absolute;
+  left: 200px;
+  top: 50px;
+}
+
+.not {
+  position: absolute;
+  left: 200px;
+}
+
+
+.notification_2 {
+  background-color: pink;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%);
+  width: 250px;
+  border-radius: 5px;
+  margin: 10px;
+  align: center;
+
+}
